@@ -1,6 +1,7 @@
 # Predict-US-stocks-closing-movements
 
-![image]()
+![image](https://github.com/Tony980624/Predict-US-stocks-closing-movements/blob/main/file01/header.jpg)
+
 竞赛目标 :开发一个模型，能够使用来自股票订单簿和收盘拍卖的数据预测数百家纳斯达克上市公司股票的收盘价格走势。拍卖信息可以用来调整价格，评估供需动态，并识别交易机会。
 
 # 取得结果
@@ -33,4 +34,30 @@
 ![target](https://github.com/Tony980624/Predict-US-stocks-closing-movements/blob/main/file01/target.png)
 
 All size related columns are in USD terms.
+
+# 估算出每只股票对值数的影响权重
+
+## 线性回归估算合成指数权重
+
+### 数据加载和预处理
+- 使用 `pandas` 读取股票数据。
+- 计算每只股票在不同日期和时间桶内的回报率 (`stock_return`)。
+- 从股票回报率中扣除目标值 (`target`) 得到指数回报率 (`index_return`)。
+
+### 构建矩阵
+- `stock_returns` 和 `index_returns` 初始化为零矩阵，存储每只股票在每个日期和时间桶的回报率。
+- 遍历每只股票和日期的组合，计算回报率和调整后的指数回报率。
+
+### 线性回归模型
+- 使用 `LinearRegression` 来拟合数据，使模型预测的指数回报率与实际计算的指数回报率尽可能接近。
+- 自变量 X 是股票的回报率，因变量 y 是指数的回报率。
+- 回归模型找到的系数（权重）反映每只股票对指数影响的相对重要性。
+
+### 模型评估
+- 输出回归系数（每只股票的权重）、截距和 R² 值（决定系数，衡量模型拟合质量的指标）。
+- R² 值接近 1 表示模型拟合得非常好，几乎可以完美预测指数回报率。
+
+### 权重的实际应用
+- 这些权重帮助投资者或基金经理了解哪些股票对指数波动的贡献最大，从而进行更有针对性的投资决策。
+
 
