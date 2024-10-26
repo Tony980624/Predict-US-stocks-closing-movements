@@ -27,10 +27,8 @@
 - The synthetic index is a custom weighted index of Nasdaq-listed stocks constructed by Optiver for this competition.
 - The unit of the target is basis points, which is a common unit of measurement in financial markets. A 1 basis point price move is equivalent to a 0.01% price move.
 - Where t is the time at the current observation, the target can be defined as:
-- 
-$$
-\text{Target} = \left( \frac{\text{StockWAP}_{t+60} - \text{StockWAP}_t}{\text{StockWAP}_t} - \frac{\text{IndexWAP}_{t+60} - \text{IndexWAP}_t}{\text{IndexWAP}_t} \right) 
-$$
+  
+![target]()
 
 
 
