@@ -5,7 +5,7 @@
 
 # 取得结果
 
-![result](https://github.com/Tony980624/Predict-US-stocks-closing-movements/blob/main/file01/Screenshot%202024-10-26%20111914.png?raw=true)
+![result](https://github.com/Tony980624/Predict-US-stocks-closing-movements/blob/main/file01/Tony980%20-%20Optiver%20-%20Trading%20at%20the%20Close.png)
 
 # 训练数据变量解读
 
